@@ -1,10 +1,9 @@
 import React from 'react'
-import Navbar from '../Components/Navbar'
+
 
 const Home = () => {
     return (
         <div>
-            <Navbar />
         <h1>The Bucket List</h1>
         </div>
     )
