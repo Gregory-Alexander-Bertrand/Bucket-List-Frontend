@@ -25,7 +25,7 @@ function App() {
       <Route 
       path="/Signup"
       render={() => {
-        if (user.id) {
+        if (localStorage.getItem('userId')) {
           return <Redirect to="/Home" />
         } else {
           return <Signup setUser={setUser} />
@@ -36,7 +36,7 @@ function App() {
       <Route 
       path="/Login"
       render={() => {
-        if (user.id) {
+        if (localStorage.getItem('userId')) {
           return <Redirect to="/Home" />
         } else {
           return <Login setUser={setUser} />
