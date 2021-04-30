@@ -11,7 +11,7 @@ import Navbar from './Components/Navbar'
 
 function App() {
   const [user, setUser] = useState({})
-  const [allGoals, setAllGoals] = useState({})
+  const [goals, setGoals] = useState({})
 
   return (
     <div className="App">
@@ -48,7 +48,7 @@ function App() {
       <Route 
       path="/Create"
       render={() => {
-        return <Create />
+        return <Create user={user}/>
       }}
       />
       <Route

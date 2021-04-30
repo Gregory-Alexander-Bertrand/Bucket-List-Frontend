@@ -9,8 +9,10 @@ const Create = (props) => {
 
     const submitForm = (e) => {
         e.preventDefault()
-        axios.post(`${process.env.REACT_APP_BACKEND_URL}/goal`, {name, location, date, description}).then((response) => {
-            console.log(response)   
+        axios.post(`${process.env.REACT_APP_BACKEND_URL}/goal`, {name, location, date, description},
+        {headers:{Authorization: props.user.id}}).then((response) => {
+            console.log(response)
+           
         })
     }
 
