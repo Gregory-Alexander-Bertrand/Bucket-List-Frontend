@@ -10,9 +10,10 @@ const Create = (props) => {
     const submitForm = (e) => {
         e.preventDefault()
         axios.post(`${process.env.REACT_APP_BACKEND_URL}/goal`, {name, location, date, description}).then((response) => {
-            console.log(response)
+            console.log(response)   
         })
     }
+
     return (
         <div>
            <div>
@@ -37,6 +38,12 @@ const Create = (props) => {
                        <input type="submit" value="Create List" />
                    </div>
                </form>
+           </div>
+           <div>
+            <h1>name: {name}</h1>
+            <h1>location: {location}</h1>
+            <h1>Date: {date}</h1>
+            <h1>Description: {description}</h1>
            </div>
         </div>
     )

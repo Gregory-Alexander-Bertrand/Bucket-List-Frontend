@@ -13,6 +13,7 @@ const Navbar = (props) => {
             {props.user.id ?
             <>
             <Link to="/">Home</Link>
+            <Link to="/Mylist">My List</Link>
             <Link to="/Create">Create Bucket List</Link>
             <span onClick={() => {
                 localStorage.removeItem('userId')

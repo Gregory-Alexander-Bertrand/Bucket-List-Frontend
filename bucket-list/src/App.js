@@ -6,11 +6,13 @@ import Home from './Pages/Home'
 import Signup from './Pages/Signup'
 import Login from './Pages/Login'
 import Create from './Pages/Create'
+import Mylist from './Pages/Mylist'
 import Navbar from './Components/Navbar'
 
 function App() {
   const [user, setUser] = useState({})
-  const [list, setList] = useState({})
+  const [allGoals, setAllGoals] = useState({})
+
   return (
     <div className="App">
       <Navbar user={user}
@@ -25,7 +27,7 @@ function App() {
       <Route 
       path="/Signup"
       render={() => {
-        if (localStorage.getItem('userId')) {
+        if (user.id) {
           return <Redirect to="/Home" />
         } else {
           return <Signup setUser={setUser} />
@@ -36,7 +38,7 @@ function App() {
       <Route 
       path="/Login"
       render={() => {
-        if (localStorage.getItem('userId')) {
+        if (user.id) {
           return <Redirect to="/Home" />
         } else {
           return <Login setUser={setUser} />
@@ -47,6 +49,12 @@ function App() {
       path="/Create"
       render={() => {
         return <Create />
+      }}
+      />
+      <Route
+      path="/Mylist"
+      render={() => {
+        return <Mylist />
       }}
       />
     </div>
