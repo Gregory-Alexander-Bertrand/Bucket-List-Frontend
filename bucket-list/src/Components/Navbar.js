@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link, Redirect} from 'react-router-dom'
+import { useState } from 'react'
 
 const Navbar = (props) => {
     return (
@@ -13,6 +14,12 @@ const Navbar = (props) => {
             <>
             <Link to="/">Home</Link>
             <Link to="/Create">Create Bucket List</Link>
+            <span onClick={() => {
+                localStorage.removeItem('userId')
+                props.setUser({})
+            }}>
+                Log Out
+            </span>
             </>
             :
             <>
