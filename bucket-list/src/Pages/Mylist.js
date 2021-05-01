@@ -28,6 +28,7 @@ const Mylist = (props) => {
                 <h2>{goal.location}</h2>
                 <h3>{goal.date}</h3>
                 <h4>{goal.description}</h4>
+                <DeleteButton />
                 </div>
                 )
               })}
