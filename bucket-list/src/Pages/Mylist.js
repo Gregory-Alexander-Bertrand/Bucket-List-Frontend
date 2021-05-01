@@ -1,9 +1,10 @@
 import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import { Link } from 'react'
 import axios from 'axios'
 import Create from '../Pages/Create'
-import AllGoals from '../Components/AllGoals'
+import DeleteButton from '../Components/DeleteButton'
 const Mylist = (props) => {
   const [goals, setGoals] = useState([])
   const getBucketList = (e) => {
@@ -14,28 +15,23 @@ const Mylist = (props) => {
     
     })
   }
-  // const getBucketList = async () => {
-  //   try {
-  //     const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/goal`)
-  //     setGoals(response.data.results)
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-  // }
-  // useEffect(() => {
-  //   getBucketList()
-  // }, [])
+  
     return (
         <div>
-          {/* <AllGoals goals={goals} /> */}
             <button onClick={getBucketList}>Button</button>
-            <ul>
+            {/* <ul> */}
               {goals.map((goal) => {
                 return (
-                <li key={goal.id}>{goal.name}</li>
+                // <li key={goal.id}>{goal.name}</li>
+                <div>
+                <h1 key={goal.id}>{goal.name}</h1>
+                <h2>{goal.location}</h2>
+                <h3>{goal.date}</h3>
+                <h4>{goal.description}</h4>
+                </div>
                 )
               })}
-            </ul>
+            {/* </ul> */}
         </div>
     )
 }
