@@ -15,6 +15,10 @@ const Mylist = (props) => {
     
     })
   }
+
+  // useEffect(() => {
+  //   getBucketList()
+  // }, [])
   
     return (
         <div>
@@ -28,7 +32,8 @@ const Mylist = (props) => {
                 <h2>{goal.location}</h2>
                 <h3>{goal.date}</h3>
                 <h4>{goal.description}</h4>
-                <DeleteButton />
+                {/* <DeleteButton id={goal.id}/> */}
+                <DeleteButton id={goal.id}/>
                 </div>
                 )
               })}
