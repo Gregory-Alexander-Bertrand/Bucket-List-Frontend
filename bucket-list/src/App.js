@@ -7,6 +7,7 @@ import Signup from './Pages/Signup'
 import Login from './Pages/Login'
 import Create from './Pages/Create'
 import Mylist from './Pages/Mylist'
+import Update from './Pages/Update'
 import Navbar from './Components/Navbar'
 
 function App() {
@@ -55,6 +56,12 @@ function App() {
       path="/Mylist"
       render={() => {
         return <Mylist />
+      }}
+      />
+      <Route
+      path="/Update"
+      render={() => {
+        return <Update />
       }}
       />
     </div>

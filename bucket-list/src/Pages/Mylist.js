@@ -2,9 +2,11 @@ import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { Link } from 'react'
+import {BrowserRouter as Redirect, Route, Router } from 'react-router-dom'
 import axios from 'axios'
 import Create from '../Pages/Create'
 import DeleteButton from '../Components/DeleteButton'
+import UpdateForm from '../Components/UpdateForm'
 const Mylist = (props) => {
   const [goals, setGoals] = useState([])
   const getBucketList = (e) => {
@@ -34,6 +36,7 @@ const Mylist = (props) => {
                 <h4>{goal.description}</h4>
                 {/* <DeleteButton id={goal.id}/> */}
                 <DeleteButton id={goal.id}/>
+                <UpdateForm id={goal.id}/>
                 </div>
                 )
               })}
