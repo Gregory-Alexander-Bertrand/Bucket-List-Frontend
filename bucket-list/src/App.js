@@ -1,5 +1,6 @@
 import './App.css';
-import {BrowserRouter as Redirect, Route, Router } from 'react-router-dom'
+// import {BrowserRouter as Redirect, Route, Router } from 'react-router-dom'
+import { Redirect, Route, Router } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Home from './Pages/Home'
@@ -69,26 +70,26 @@ function App() {
         }
       }}
       />
-      <Route 
+      {/* <Route 
       path="/Create"
       render={() => {
         return <Create user={user}/>
       }}
-      />
-      {/* <Route 
-      path="/Create"
+      /> */}
+      <Route 
+      exact path="/Create"
       render={() => {
         if(user.id) {
-          return <Redirect to ="/" />
+          return <Create user={setUser}/>
         } else {
-          return <Create user={user} />
+          return <Redirect to="/Login"/>
         }
       }}
-      /> */}
+      />
       <Route
       path="/Mylist"
       render={() => {
-        return <Mylist />
+        return <Mylist goals={goals}/>
       }}
       />
 

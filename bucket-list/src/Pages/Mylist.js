@@ -8,15 +8,28 @@ import Create from '../Pages/Create'
 import DeleteButton from '../Components/DeleteButton'
 import UpdateForm from '../Components/UpdateForm'
 const Mylist = (props) => {
-  const [goals, setGoals] = useState([])
-  const getBucketList = (e) => {
-    e.preventDefault()
-    axios.get(`${process.env.REACT_APP_BACKEND_URL}/goal`).then((response) => {
-      console.log(response.data.goals)
-      setGoals(response.data.goals)
+ 
+  // const getBucketList = (e) => {
+  //   e.preventDefault()
+  //   axios.get(`${process.env.REACT_APP_BACKEND_URL}/goal`).then((response) => {
+  //     console.log(response.data.goals)
+  //     setGoals(response.data.goals)
     
-    })
-  }
+  //   })
+  // }
+
+  // const getBucketList = async() => {
+  //   try {
+  //     const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/goal/alluser`, {
+  //       headers: {
+  //         authorization: localStorage.getItem('userId')
+  //       }
+  //     })
+  //     console.log(response)
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
 
   // useEffect(() => {
   //   getBucketList()
@@ -24,9 +37,9 @@ const Mylist = (props) => {
   
     return (
         <div>
-            <button onClick={getBucketList}>Button</button>
+            {/* <button onClick={getBucketList}>Button</button> */}
             {/* <ul> */}
-              {goals.map((goal) => {
+              {props.goals.map((goal) => {
                 return (
                 // <li key={goal.id}>{goal.name}</li>
                 <div>
