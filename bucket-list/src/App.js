@@ -13,6 +13,27 @@ import Navbar from './Components/Navbar'
 function App() {
   const [user, setUser] = useState({})
   const [goals, setGoals] = useState({})
+  
+  const getUserInfo = async () => {
+    const userId = localStorage.getItem('userId')
+    try {
+      let response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/user/verify`, {
+        headers: {
+          authorization: userId
+        }
+      })
+      console.log(response)
+      setUser(response.data.user)
+      setGoals(response.data.user.goals)
+
+    } catch (error) {
+      console.log(error, 'unable to find')
+    }
+  }
+
+  useEffect(() => {
+    getUserInfo()
+  }, [])
 
   return (
     <div className="App">
@@ -29,7 +50,7 @@ function App() {
       path="/Signup"
       render={() => {
         if (user.id) {
-          return <Redirect to="/Home" />
+          return <Redirect to="/" />
         } else {
           return <Signup setUser={setUser} />
         }
@@ -39,10 +60,12 @@ function App() {
       <Route 
       path="/Login"
       render={() => {
+        console.log(user.id)
         if (user.id) {
-          return <Redirect to="/Home" />
+          return <Redirect to="/" />
         } else {
           return <Login setUser={setUser} />
+          console.log(user.id)
         }
       }}
       />
@@ -52,18 +75,23 @@ function App() {
         return <Create user={user}/>
       }}
       />
+      {/* <Route 
+      path="/Create"
+      render={() => {
+        if(user.id) {
+          return <Redirect to ="/" />
+        } else {
+          return <Create user={user} />
+        }
+      }}
+      /> */}
       <Route
       path="/Mylist"
       render={() => {
         return <Mylist />
       }}
       />
-      <Route
-      path="/Update"
-      render={() => {
-        return <Update />
-      }}
-      />
+
     </div>
   );
 }

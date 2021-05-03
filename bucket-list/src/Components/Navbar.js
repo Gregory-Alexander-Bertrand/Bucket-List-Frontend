@@ -15,9 +15,8 @@ const Navbar = (props) => {
             <Link to="/">Home</Link>
             <Link to="/Mylist">My List</Link>
             <Link to="/Create">Create Bucket List</Link>
-            <Link to="/Update">Update List</Link>
             <span onClick={() => {
-                localStorage.removeItem('userId')
+                localStorage.clear()
                 props.setUser({})
             }}>
                 Log Out

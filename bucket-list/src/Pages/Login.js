@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 const Login = (props) => {
     const [email, setEmail] = useState('')
@@ -14,6 +14,14 @@ const Login = (props) => {
             props.setUser(response.data.user)
         })
     }
+
+    // useEffect(() => {
+    //     const loggedInUser = localStorage.getItem('userId');
+    //     if (loggedInUser) {
+    //         const foundUser = JSON.parse(loggedInUser)
+    //         props.setUser(foundUser);
+    //     }
+    // }, []);
     return (
         <div>
             <div>
