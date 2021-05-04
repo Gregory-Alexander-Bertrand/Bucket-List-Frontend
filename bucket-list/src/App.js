@@ -14,6 +14,7 @@ import Navbar from './Components/Navbar'
 function App() {
   const [user, setUser] = useState({})
   const [goals, setGoals] = useState({})
+
   
   const getUserInfo = async () => {
     const userId = localStorage.getItem('userId')
