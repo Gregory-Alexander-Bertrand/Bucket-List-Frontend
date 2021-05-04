@@ -70,13 +70,13 @@ function App() {
         }
       }}
       />
-      {/* <Route 
+      <Route 
       path="/Create"
       render={() => {
         return <Create user={user}/>
       }}
-      /> */}
-      <Route 
+      />
+      {/* <Route 
       exact path="/Create"
       render={() => {
         if(user.id) {
@@ -85,7 +85,7 @@ function App() {
           return <Redirect to="/Login"/>
         }
       }}
-      />
+      /> */}
       <Route
       path="/Mylist"
       render={() => {

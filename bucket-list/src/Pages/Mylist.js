@@ -38,7 +38,8 @@ const Mylist = (props) => {
     return (
         <div>
             {/* <button onClick={getBucketList}>Button</button> */}
-            {/* <ul> */}
+              {props.goals.length > 0 ?
+              <div>
               {props.goals.map((goal) => {
                 return (
                 // <li key={goal.id}>{goal.name}</li>
@@ -53,7 +54,10 @@ const Mylist = (props) => {
                 </div>
                 )
               })}
-            {/* </ul> */}
+              </div>
+              :
+              <p>Loading</p>
+            }
         </div>
     )
 }

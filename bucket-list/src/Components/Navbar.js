@@ -18,6 +18,7 @@ const Navbar = (props) => {
             <span onClick={() => {
                 localStorage.clear()
                 props.setUser({})
+                
             }}>
                 Log Out
             </span>
