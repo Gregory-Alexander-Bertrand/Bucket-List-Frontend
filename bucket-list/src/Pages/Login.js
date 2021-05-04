@@ -15,26 +15,21 @@ const Login = (props) => {
         })
     }
 
-    // useEffect(() => {
-    //     const loggedInUser = localStorage.getItem('userId');
-    //     if (loggedInUser) {
-    //         const foundUser = JSON.parse(loggedInUser)
-    //         props.setUser(foundUser);
-    //     }
-    // }, []);
+   
     return (
-        <div>
-            <div>
-                <form onSubmit={submitForm}>
-                    <div>
+        <div className="login-container">
+            <p className="inspire-quote">"Ever tried. Ever failed. No matter. Try again. Fail again. Fail better"- Samuel Beckett</p>
+            <div className="login-form">
+                <form onSubmit={submitForm} className="login">
+                    <div className="form-control">
                         <label htmlFor="email">Email:</label>
                         <input value={email} onChange={(e) => setEmail(e.target.value)} />
                     </div>
-                    <div>
+                    <div className="form-control">
                         <label htmlFor="password">Password:</label>
                         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                     </div>
-                    <div>
+                    <div className="form-control">
                         <input type="submit" value="Login" />
                     </div>
                 </form>

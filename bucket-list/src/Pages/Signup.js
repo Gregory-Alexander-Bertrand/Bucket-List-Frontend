@@ -17,22 +17,23 @@ const Signup = (props) => {
         })
     }
     return (
-        <div>
-            <div>
-                <form onSubmit={submitForm}>
-                    <div>
+        <div className="signup-container">
+            <p className="inspire-quote">"You're never too old to set another goal or to dream a new dream"- C.S. Lewis</p>
+            <div className="signup-form">
+                <form onSubmit={submitForm} className="sign-up">
+                    <div className="form-control">
                         <label htmlFor="name">Name:</label>
                         <input value={name} onChange={(e) => setName(e.target.value)} />
                     </div>
-                    <div>
+                    <div className="form-control">
                         <label htmlFor="email">Email:</label>
                         <input value={email} onChange={(e) => setEmail(e.target.value)} />
                     </div>
-                    <div>
+                    <div className="form-control">
                         <label htmlFor="password">Password:</label>
                         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                     </div>
-                    <div>
+                    <div className="form-control">
                         <input type="submit" value="sign up" />
                     </div>
                 </form>

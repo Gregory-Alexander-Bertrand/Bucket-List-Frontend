@@ -36,14 +36,14 @@ const Mylist = (props) => {
   // }, [])
   
     return (
-        <div>
+        <div className="list-container">
             {/* <button onClick={getBucketList}>Button</button> */}
               {props.goals.length > 0 ?
               <div>
               {props.goals.map((goal) => {
                 return (
                 // <li key={goal.id}>{goal.name}</li>
-                <div>
+                <div className="list-items">
                 <h1 key={goal.id}>{goal.name}</h1>
                 <h2>{goal.location}</h2>
                 <h3>{goal.date}</h3>

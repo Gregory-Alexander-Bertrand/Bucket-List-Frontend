@@ -1,4 +1,5 @@
 import './App.css';
+import './index.css'
 // import {BrowserRouter as Redirect, Route, Router } from 'react-router-dom'
 import { Redirect, Route, Router } from 'react-router-dom'
 import { useState, useEffect } from 'react'
@@ -71,22 +72,22 @@ function App() {
         }
       }}
       />
-      <Route 
+      {/* <Route 
       path="/Create"
       render={() => {
         return <Create user={user}/>
       }}
-      />
-      {/* <Route 
+      /> */}
+      <Route 
       exact path="/Create"
       render={() => {
         if(user.id) {
-          return <Create user={setUser}/>
+          return <Create user={user}/>
         } else {
           return <Redirect to="/Login"/>
         }
       }}
-      /> */}
+      />
       <Route
       path="/Mylist"
       render={() => {

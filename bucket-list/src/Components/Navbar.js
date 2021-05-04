@@ -12,21 +12,17 @@ const Navbar = (props) => {
 
     return (
         <header>
+            <div className="navigation">
         <nav>
            
             {props.user.id ?
             <>
             <Link to="/">Home</Link>
+                {   ' - '   }
             <Link to="/Mylist">My List</Link>
+            {   ' - '   }
             <Link to="/Create">Create Bucket List</Link>
-            {/* <span onClick={() => {
-                localStorage.clear()
-                props.setUser({})
-               
-                
-            }}>
-                Log Out
-            </span> */}
+            {   ' - '   }
             <span onClick={() => logout()}>
                 <Link to="/">Logout</Link>
             </span>
@@ -34,11 +30,14 @@ const Navbar = (props) => {
             :
             <>
             <Link to="/">Home</Link>
+            {   ' - '   }
             <Link to="/Signup">Signup</Link>
+            {   ' - '   }
             <Link to="/Login">Login</Link>
             </>
             }
         </nav>
+        </div>
         </header>
     )
 }
